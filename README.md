@@ -44,4 +44,4 @@ Assets used in the original build were sourced from various creators and are pro
 
 ## Play the Game
 
-[Play on itch.io]((https://kushsinha.itch.io/artaxia-a-duel-of-fates))
+Play on itch.io : https://kushsinha.itch.io/artaxia-a-duel-of-fates
