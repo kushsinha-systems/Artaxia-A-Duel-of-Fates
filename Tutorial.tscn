@@ -1,0 +1,221 @@
+[gd_scene load_steps=13 format=3 uid="uid://dfp5bqgm3qfan"]
+
+[ext_resource type="Script" uid="uid://3qh6x3sjv7fx" path="res://tutorial.gd" id="1_fr6qw"]
+[ext_resource type="Texture2D" uid="uid://b4micc8kibvfn" path="res://Assets/New/2DBackground_21.png" id="2_p3v23"]
+[ext_resource type="FontFile" uid="uid://cn41bm60qbn2b" path="res://fonts/Cinzel-Medium.ttf" id="3_hlpnd"]
+[ext_resource type="Texture2D" uid="uid://c51x0baf6hi2k" path="res://Assets/Buttons/Title.png" id="4_p3v23"]
+[ext_resource type="Texture2D" uid="uid://carqt6njwtu2i" path="res://Assets/Buttons/NextPage.png" id="6_73or5"]
+[ext_resource type="PackedScene" uid="uid://orxisljyp6ax" path="res://Player.tscn" id="6_hlpnd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hlpnd"]
+size = Vector2(1087, 1315)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oiqhk"]
+atlas = ExtResource("4_p3v23")
+region = Rect2(45, 148, 580, 341)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p3v23"]
+atlas = ExtResource("4_p3v23")
+region = Rect2(665, 148, 580, 341)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jldhp"]
+atlas = ExtResource("6_73or5")
+region = Rect2(45, 148, 580, 341)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tyy4w"]
+atlas = ExtResource("6_73or5")
+region = Rect2(665, 148, 580, 341)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_73or5"]
+size = Vector2(3600, 1101.75)
+
+[node name="Control" type="Control" node_paths=PackedStringArray("player")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_fr6qw")
+player = NodePath("DemoPlayer")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(969, 549)
+scale = Vector2(-1.35, 1.35)
+texture = ExtResource("2_p3v23")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 12.0
+offset_right = 2209.0
+offset_bottom = 175.0
+theme_override_colors/font_shadow_color = Color(0, 0, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_hlpnd")
+theme_override_font_sizes/font_size = 100
+text = "-~How To Play!~-"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 144.0
+offset_right = 1626.0
+offset_bottom = 1089.0
+color = Color(0, 0, 0, 0.492)
+
+[node name="Wall" type="StaticBody2D" parent="."]
+position = Vector2(-802, 82)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
+position = Vector2(328, 453)
+shape = SubResource("RectangleShape2D_hlpnd")
+debug_color = Color(0.97360384, 0, 0.43016636, 0.19900002)
+
+[node name="TitleButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1628.0
+offset_top = 898.0
+offset_right = 2265.0
+offset_bottom = 1273.0001
+scale = Vector2(0.5, 0.5)
+texture_normal = SubResource("AtlasTexture_oiqhk")
+texture_hover = SubResource("AtlasTexture_p3v23")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1628.0
+offset_top = 151.0
+offset_right = 2208.0
+offset_bottom = 492.0
+scale = Vector2(0.5, 0.5)
+texture_normal = SubResource("AtlasTexture_jldhp")
+texture_hover = SubResource("AtlasTexture_tyy4w")
+
+[node name="Wall2" type="StaticBody2D" parent="."]
+position = Vector2(-802, 82)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2"]
+position = Vector2(2905, 474)
+shape = SubResource("RectangleShape2D_hlpnd")
+debug_color = Color(0.97360384, 0, 0.43016636, 0.35900003)
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 293.0
+offset_right = 322.0
+offset_bottom = 1071.0
+theme_override_colors/font_color = Color(0.3282248, 0.9314077, 0.74060166, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_hlpnd")
+theme_override_font_sizes/font_size = 50
+text = "A               
+
+D               
+
+W             
+
+S            
+
+Q             
+
+E "
+
+[node name="Label5" type="Label" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 166.0
+offset_right = 337.0
+offset_bottom = 262.0
+theme_override_colors/font_color = Color(1, 0, 0.74060166, 1)
+theme_override_colors/font_shadow_color = Color(0.59261936, 0.8787422, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_hlpnd")
+theme_override_font_sizes/font_size = 70
+text = "Player1"
+
+[node name="Label6" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1075.0
+offset_top = 166.0
+offset_right = 1348.0
+offset_bottom = 262.0
+theme_override_colors/font_color = Color(1, 0, 0.74060166, 1)
+theme_override_colors/font_shadow_color = Color(0.59261936, 0.8787422, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_hlpnd")
+theme_override_font_sizes/font_size = 70
+text = "Player2"
+
+[node name="Label7" type="Label" parent="."]
+layout_mode = 0
+offset_left = 521.0
+offset_top = 166.0
+offset_right = 824.0
+offset_bottom = 262.0
+theme_override_colors/font_color = Color(1, 0, 0.74060166, 1)
+theme_override_colors/font_shadow_color = Color(0.59261936, 0.8787422, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_hlpnd")
+theme_override_font_sizes/font_size = 70
+text = "Actions"
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 501.0
+offset_top = 293.0
+offset_right = 1003.0
+offset_bottom = 1071.0
+theme_override_colors/font_color = Color(0.3282248, 0.9314077, 0.74060166, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_hlpnd")
+theme_override_font_sizes/font_size = 50
+text = "Move Left
+
+Move Right
+
+Jump / Double Jump
+
+Dash
+
+Attack
+
+Block"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1193.0
+offset_top = 293.0
+offset_right = 1598.0
+offset_bottom = 1091.0
+theme_override_colors/font_color = Color(0.3282248, 0.9314077, 0.74060166, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_hlpnd")
+theme_override_font_sizes/font_size = 50
+text = "←
+
+→             
+
+↑             
+
+↓            
+
+0/Ins key             
+
+./Del key "
+
+[node name="DemoPlayer" parent="." instance=ExtResource("6_hlpnd")]
+position = Vector2(955, 441)
+
+[node name="Ground" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+z_index = 1
+position = Vector2(1315, 1458)
+shape = SubResource("RectangleShape2D_73or5")
+debug_color = Color(0.2811436, 0.5000303, 1, 0.41960785)
+
+[connection signal="pressed" from="TitleButton" to="." method="_on_title_button_pressed"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

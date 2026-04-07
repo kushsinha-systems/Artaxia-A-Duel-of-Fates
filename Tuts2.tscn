@@ -1,0 +1,104 @@
+[gd_scene load_steps=8 format=3 uid="uid://t0n30gkt8nqo"]
+
+[ext_resource type="Script" uid="uid://ccyp0jg63n7ya" path="res://tuts_2.gd" id="1_4toer"]
+[ext_resource type="Texture2D" uid="uid://b4micc8kibvfn" path="res://Assets/New/2DBackground_21.png" id="1_bpch4"]
+[ext_resource type="PackedScene" uid="uid://b3uupgag6wpvr" path="res://UI.tscn" id="1_od1xu"]
+[ext_resource type="FontFile" uid="uid://cn41bm60qbn2b" path="res://fonts/Cinzel-Medium.ttf" id="2_od1xu"]
+[ext_resource type="Texture2D" uid="uid://c51x0baf6hi2k" path="res://Assets/Buttons/Title.png" id="5_vp54b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wgssv"]
+atlas = ExtResource("5_vp54b")
+region = Rect2(45, 148, 580, 341)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2jg5r"]
+atlas = ExtResource("5_vp54b")
+region = Rect2(665, 148, 580, 341)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_4toer")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(969, 549)
+rotation = 3.1415927
+scale = Vector2(1.35, -1.35)
+texture = ExtResource("1_bpch4")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 75.0
+offset_right = 1893.0
+offset_bottom = 1066.0
+color = Color(0, 0, 0, 0.492)
+
+[node name="UIRoot" parent="." instance=ExtResource("1_od1xu")]
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 733.0
+offset_top = 189.0
+offset_right = 1235.0
+offset_bottom = 257.0
+theme_override_colors/font_color = Color(0.3282248, 0.9314077, 0.74060166, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_od1xu")
+theme_override_font_sizes/font_size = 50
+text = "< - - - HP Bar - - - >"
+
+[node name="Label5" type="Label" parent="."]
+layout_mode = 0
+offset_left = 627.0
+offset_top = 249.0
+offset_right = 1280.0
+offset_bottom = 317.0
+theme_override_colors/font_color = Color(0.3282248, 0.9314077, 0.74060166, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_od1xu")
+theme_override_font_sizes/font_size = 50
+text = "< - - - - Posture Bar - - - - >"
+
+[node name="Label6" type="Label" parent="."]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 371.0
+offset_right = 1866.0
+offset_bottom = 1428.0
+theme_override_colors/font_color = Color(0.3282248, 0.9314077, 0.74060166, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -10
+theme_override_fonts/font = ExtResource("2_od1xu")
+theme_override_font_sizes/font_size = 40
+text = "Health falls from 100% → 0%. Break it and the duel ends.
+Posture rises from 0% → 100%. Break it and your opponent is exposed to DeathBlows.
+
+
+Attack to deal damage and build pressure. (HP ↓ Posture ↑)
+Block stops damage but massively strains your posture.
+
+
+Parry at the right moment to turn the tides. (Their Posture ↑)
+Perfect Parry devastates your opponent’s stance. (Their Posture ↑↑)
+
+
+Fight forward. Hesitation is defeat.
+
+And Above All Else, Don't Forget to Have Fun! ✨"
+
+[node name="TitleButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1628.0
+offset_top = 898.0
+offset_right = 2265.0
+offset_bottom = 1273.0001
+scale = Vector2(0.5, 0.5)
+texture_normal = SubResource("AtlasTexture_wgssv")
+texture_hover = SubResource("AtlasTexture_2jg5r")
+
+[connection signal="pressed" from="TitleButton" to="." method="_on_title_button_pressed"]

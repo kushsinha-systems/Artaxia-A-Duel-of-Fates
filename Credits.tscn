@@ -1,0 +1,231 @@
+[gd_scene load_steps=8 format=3 uid="uid://dux136kucjp1b"]
+
+[ext_resource type="Script" uid="uid://66e6s1mh7wh1" path="res://credits.gd" id="1_k2yj5"]
+[ext_resource type="Texture2D" uid="uid://b7tumistuyyi2" path="res://Assets/New/2DBackground_14.png" id="1_ynf4x"]
+[ext_resource type="FontFile" uid="uid://cn41bm60qbn2b" path="res://fonts/Cinzel-Medium.ttf" id="3_s70hm"]
+[ext_resource type="Texture2D" uid="uid://c51x0baf6hi2k" path="res://Assets/Buttons/Title.png" id="4_xic2l"]
+[ext_resource type="AudioStream" uid="uid://yku386cyi41h" path="res://Assets/Sound/💪 Orchestral Trailer Piano Music (No Copyright) The Epic Hero by KeysofMoonMusic  🇺🇸 - BreakingCopyright — Royalty Free Music.mp3" id="6_s70hm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xic2l"]
+atlas = ExtResource("4_xic2l")
+region = Rect2(45, 148, 580, 341)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s70hm"]
+atlas = ExtResource("4_xic2l")
+region = Rect2(665, 148, 580, 341)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_k2yj5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(969, 549)
+scale = Vector2(1.35, 1.35)
+texture = ExtResource("1_ynf4x")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 974.0
+offset_top = 20.0
+offset_right = 1558.0
+offset_bottom = 183.0
+theme_override_colors/font_shadow_color = Color(0, 0, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_s70hm")
+theme_override_font_sizes/font_size = 100
+text = "-~Credits~-"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 114.0
+offset_right = 695.0
+offset_bottom = 343.0
+color = Color(0, 0, 0, 0.492)
+
+[node name="Label2" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 42.0
+offset_right = 598.0
+offset_bottom = 219.0
+theme_override_colors/font_color = Color(0.3282248, 0.9314077, 0.74060166, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_s70hm")
+theme_override_font_sizes/font_size = 24
+text = "Everything, from combat design to code,
+was crafted by Kush himself.
+This marks his very first solo project.
+
+Thank you, truly, for taking the time to play."
+
+[node name="ColorRect5" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 995.0
+offset_right = 715.0
+offset_bottom = 1079.0
+color = Color(0, 0, 0, 0.492)
+
+[node name="Label3" type="Label" parent="ColorRect5"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 13.0
+offset_right = 680.0
+offset_bottom = 82.0
+theme_override_colors/font_color = Color(0.3282248, 0.9314077, 0.74060166, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_s70hm")
+theme_override_font_sizes/font_size = 24
+text = "Created with passion over the course of 3 months!
+Built using Godot 4.5.1"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 92.0
+offset_right = 876.0
+offset_bottom = 255.0
+theme_override_colors/font_color = Color(0.60124344, 0.5074483, 0.98758966, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_s70hm")
+theme_override_font_sizes/font_size = 45
+text = "~A Solo Creation by Kush Sinha~"
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 701.0
+offset_top = 183.0
+offset_right = 1908.0
+offset_bottom = 499.0
+color = Color(0, 0, 0, 0.492)
+
+[node name="Label4" type="Label" parent="ColorRect3"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 51.0
+offset_right = 1194.0
+offset_bottom = 300.0
+theme_override_colors/font_color = Color(0.3282248, 0.9314077, 0.74060166, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_s70hm")
+theme_override_font_sizes/font_size = 24
+text = "The soul of the experience, shaped by these exceptional composers:
+
+The unforgettable Title Theme that sets the stage was composed by cjbeardsofficial.
+The heart-pounding Battle Theme that drives every clash was created by Makai Symphony.
+The smooth and focused “How to Play” theme guiding your growth was by Savfk.
+The Serene Game Over theme that lingers in silence was composed by Steffendaum.
+The Reflective Credits Theme you hear now was created by keysofmoonmusic."
+
+[node name="Label3" type="Label" parent="ColorRect3/Label4"]
+layout_mode = 0
+offset_left = 378.0
+offset_top = -58.0
+offset_right = 775.0
+offset_bottom = 3.0
+theme_override_colors/font_color = Color(0.6, 0.5058824, 0.9882353, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_s70hm")
+theme_override_font_sizes/font_size = 45
+text = "~Music & Sound~"
+
+[node name="TitleButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1254.0
+offset_top = 523.0
+offset_right = 1891.0
+offset_bottom = 898.0
+scale = Vector2(0.8, 0.8)
+texture_normal = SubResource("AtlasTexture_xic2l")
+texture_hover = SubResource("AtlasTexture_s70hm")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 509.0
+offset_right = 1095.0
+offset_bottom = 833.0
+color = Color(0, 0, 0, 0.492)
+
+[node name="Label3" type="Label" parent="ColorRect2"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 58.0
+offset_right = 1043.0
+offset_bottom = 307.0
+theme_override_colors/font_color = Color(0.3282248, 0.9314077, 0.74060166, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_s70hm")
+theme_override_font_sizes/font_size = 24
+text = "A heartfelt tribute to the brilliant artists whose work
+brought this world to life:
+
+The striking Character Model was masterfully brought to life by Brullov.
+The magnificent Throne Room battlefield was beautifully crafted by CraftPix.
+The captivating Menu Art was brilliantly created by GNDLF The Maker.
+The sleek and impactful HP Bar assets were designed by planettycoon."
+
+[node name="Label4" type="Label" parent="ColorRect2"]
+layout_mode = 0
+offset_left = 286.0
+offset_right = 683.0
+offset_bottom = 61.0
+theme_override_colors/font_color = Color(0.6, 0.5058824, 0.9882353, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_s70hm")
+theme_override_font_sizes/font_size = 45
+text = "~Art & Assets~"
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 963.0
+offset_top = 842.0
+offset_right = 1893.0
+offset_bottom = 1059.0
+color = Color(0, 0, 0, 0.492)
+
+[node name="Label3" type="Label" parent="ColorRect4"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 58.0
+offset_right = 911.0
+offset_bottom = 199.0
+theme_override_colors/font_color = Color(0.3282248, 0.9314077, 0.74060166, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_s70hm")
+theme_override_font_sizes/font_size = 24
+text = "To you, the one sitting across the screen.
+Thank you. Truly.
+For every moment you gave, every battle you fought, 
+every second you stayed. It means more than words can ever express."
+
+[node name="Label4" type="Label" parent="ColorRect4"]
+layout_mode = 0
+offset_left = 265.0
+offset_right = 662.0
+offset_bottom = 125.0
+theme_override_colors/font_color = Color(0.6, 0.5058824, 0.9882353, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_s70hm")
+theme_override_font_sizes/font_size = 45
+text = "~A Final Word~
+"
+
+[node name="TitleMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_s70hm")
+parameters/looping = true
+
+[connection signal="pressed" from="TitleButton" to="." method="_on_title_button_pressed"]

@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6exl3l1wyhso"]
+
+[ext_resource type="Script" uid="uid://dcp1ll36p4ne3" path="res://canvas_layer.gd" id="1_ws5yv"]
+[ext_resource type="AudioStream" uid="uid://458dmlutxeg8" path="res://Assets/Sound/Effects/sword-thud-47635.mp3" id="2_jaa4l"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_ws5yv")
+
+[node name="DeathFade" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="TransitionSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_jaa4l")

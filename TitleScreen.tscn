@@ -1,0 +1,84 @@
+[gd_scene load_steps=14 format=3 uid="uid://sx85bhwbllny"]
+
+[ext_resource type="Texture2D" uid="uid://bkqjm8vkdgk1c" path="res://Assets/Backgrounds/2DBackground_19.png" id="1_fnlyl"]
+[ext_resource type="Script" uid="uid://bbbarrv3b8x3y" path="res://title_screen.gd" id="1_pkhjh"]
+[ext_resource type="Texture2D" uid="uid://couwsu6bave0c" path="res://Assets/New/Title (2).png" id="3_brl6n"]
+[ext_resource type="Texture2D" uid="uid://d17ihvsptdp5g" path="res://Assets/Gemini_Generated_Image_f6mq3f6mq3f6mq3f (1).png" id="4_tu0on"]
+[ext_resource type="Texture2D" uid="uid://c24td3rraqcv1" path="res://Assets/Gemini_Generated_Image_5rn3b5rn3b5rn3b5 (1).png" id="5_2k3je"]
+[ext_resource type="Texture2D" uid="uid://b86rmljopdu5o" path="res://Assets/image (5).png" id="5_skwql"]
+[ext_resource type="AudioStream" uid="uid://bquefdjkas8xv" path="res://Assets/Sound/⚡ Free Epic Music (No Copyright) Fire And Thunder by cjbeardsofficial  🇺🇸 - BreakingCopyright — Royalty Free Music.mp3" id="7_brl6n"]
+[ext_resource type="Texture2D" uid="uid://c8lckobetqshy" path="res://Assets/Buttons/Credit.png" id="8_brl6n"]
+[ext_resource type="Texture2D" uid="uid://biku71c0ugdm6" path="res://Assets/Buttons/how.png" id="9_5trnc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ianhm"]
+atlas = ExtResource("8_brl6n")
+region = Rect2(45, 148, 580, 342)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6htr"]
+atlas = ExtResource("8_brl6n")
+region = Rect2(665, 148, 580, 342)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8skst"]
+atlas = ExtResource("9_5trnc")
+region = Rect2(45, 149, 580, 341)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nlxhl"]
+atlas = ExtResource("9_5trnc")
+region = Rect2(665, 148, 580, 342)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1925.0
+offset_bottom = 1084.0
+script = ExtResource("1_pkhjh")
+
+[node name="2dBackground19" type="Sprite2D" parent="."]
+position = Vector2(916.39996, 567)
+scale = Vector2(1.424, 1.4)
+texture = ExtResource("1_fnlyl")
+
+[node name="GeminiGeneratedImageJpv3Qjjpv3Qjjpv3RemovebgPreview" type="Sprite2D" parent="."]
+position = Vector2(819, 268)
+scale = Vector2(0.98, 0.98)
+texture = ExtResource("3_brl6n")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 618.0
+offset_top = 462.0
+offset_right = 2652.9998
+offset_bottom = 3526.9998
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("4_tu0on")
+texture_pressed = ExtResource("5_skwql")
+texture_hover = ExtResource("5_2k3je")
+stretch_mode = 0
+
+[node name="TitleMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_brl6n")
+parameters/looping = true
+
+[node name="TextureButton2" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1153.0
+offset_top = 610.0
+offset_right = 1733.0
+offset_bottom = 952.0
+scale = Vector2(0.8, 0.8)
+texture_normal = SubResource("AtlasTexture_ianhm")
+texture_hover = SubResource("AtlasTexture_c6htr")
+
+[node name="Button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 610.0
+offset_right = 629.0
+offset_bottom = 951.0
+scale = Vector2(0.8, 0.8)
+texture_normal = SubResource("AtlasTexture_8skst")
+texture_hover = SubResource("AtlasTexture_nlxhl")
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="TextureButton2" to="." method="_on_texture_button_2_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

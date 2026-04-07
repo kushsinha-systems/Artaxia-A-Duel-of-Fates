@@ -1,0 +1,217 @@
+[gd_scene load_steps=20 format=3 uid="uid://b3uupgag6wpvr"]
+
+[ext_resource type="Texture2D" uid="uid://bufwsc363lgwc" path="res://Assets/UI/BHP_red.png" id="1_3b2b5"]
+[ext_resource type="Texture2D" uid="uid://svf7edbdl0j7" path="res://Assets/UI/BHP_base.png" id="1_b3bc3"]
+[ext_resource type="Script" uid="uid://bq7qa1wptquca" path="res://ui.gd" id="1_qui0h"]
+[ext_resource type="Texture2D" uid="uid://3dmdh2vy5ty6" path="res://Assets/UI/BHP_blue.png" id="2_g6l6n"]
+[ext_resource type="Texture2D" uid="uid://cmtkp7qbbapbg" path="res://Assets/png/red/char_red_1.png" id="5_0mc3e"]
+[ext_resource type="Texture2D" uid="uid://pe1kn2oycc6n" path="res://Assets/png/blue/char_blue_1.png" id="6_2n5f6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h84ma"]
+atlas = ExtResource("5_0mc3e")
+region = Rect2(0, 0, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_47wu6"]
+atlas = ExtResource("5_0mc3e")
+region = Rect2(56, 0, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2n1s8"]
+atlas = ExtResource("5_0mc3e")
+region = Rect2(112, 0, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3vjad"]
+atlas = ExtResource("5_0mc3e")
+region = Rect2(168, 0, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yt0h1"]
+atlas = ExtResource("5_0mc3e")
+region = Rect2(224, 0, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vd78s"]
+atlas = ExtResource("5_0mc3e")
+region = Rect2(280, 0, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7lpc7"]
+atlas = ExtResource("6_2n5f6")
+region = Rect2(0, 0, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_afxia"]
+atlas = ExtResource("6_2n5f6")
+region = Rect2(56, 0, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xppd1"]
+atlas = ExtResource("6_2n5f6")
+region = Rect2(112, 0, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8fnii"]
+atlas = ExtResource("6_2n5f6")
+region = Rect2(168, 0, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lgtam"]
+atlas = ExtResource("6_2n5f6")
+region = Rect2(224, 0, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jd444"]
+atlas = ExtResource("6_2n5f6")
+region = Rect2(280, 0, 56, 56)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_27c8x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h84ma")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_47wu6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2n1s8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3vjad")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yt0h1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vd78s")
+}],
+"loop": true,
+"name": &"Idle_1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7lpc7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_afxia")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xppd1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8fnii")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lgtam")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jd444")
+}],
+"loop": true,
+"name": &"Idle_2",
+"speed": 5.0
+}]
+
+[node name="UIRoot" type="CanvasLayer" node_paths=PackedStringArray("p1_hp_bar", "p1_posture_bar", "p2_hp_bar", "p2_posture_bar", "anim1", "anim2")]
+script = ExtResource("1_qui0h")
+p1_hp_bar = NodePath("Player1UI/HPBar")
+p1_posture_bar = NodePath("Player1UI/PostureBar")
+p2_hp_bar = NodePath("Player2UI/HPBar")
+p2_posture_bar = NodePath("Player2UI/PostureBar")
+anim1 = NodePath("Player1UI/AnimatedSprite2D")
+anim2 = NodePath("Player2UI/AnimatedSprite2D")
+
+[node name="Player1UI" type="Control" parent="."]
+custom_minimum_size = Vector2(600, 140)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 600.0
+offset_bottom = 140.0
+size_flags_horizontal = 3
+
+[node name="HPBar" type="TextureProgressBar" parent="Player1UI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.33333334
+anchor_top = 1.3642857
+anchor_right = 1.145
+anchor_bottom = 1.8464285
+offset_right = 487.0
+offset_bottom = 67.5
+scale = Vector2(0.5, 0.5)
+value = 100.0
+texture_progress = ExtResource("1_3b2b5")
+metadata/_edit_use_anchors_ = true
+
+[node name="PostureBar" type="TextureProgressBar" parent="Player1UI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.34166667
+anchor_top = 1.7785715
+anchor_right = 1.0208334
+anchor_bottom = 2.15
+offset_top = -1.5258789e-05
+offset_right = 407.5
+offset_bottom = 52.0
+scale = Vector2(0.5, 0.5)
+value = 100.0
+texture_progress = ExtResource("2_g6l6n")
+metadata/_edit_use_anchors_ = true
+
+[node name="Frame" type="TextureRect" parent="Player1UI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.13833334
+anchor_top = 1.1357143
+anchor_right = 1.1608334
+anchor_bottom = 2.442857
+offset_right = 613.5
+offset_bottom = 183.00003
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_b3bc3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player1UI"]
+position = Vector2(338, 101.999985)
+scale = Vector2(3.5, 3.5)
+sprite_frames = SubResource("SpriteFrames_27c8x")
+animation = &"Idle_2"
+
+[node name="Player2UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 22.0
+offset_top = 1.0
+offset_right = 22.0
+offset_bottom = 1.0
+scale = Vector2(-1, 1)
+size_flags_horizontal = 3
+
+[node name="HPBar" type="TextureProgressBar" parent="Player2UI"]
+layout_mode = 0
+offset_left = -1685.0
+offset_top = 191.0
+offset_right = -711.0
+offset_bottom = 326.0
+scale = Vector2(0.5, 0.5)
+value = 100.0
+texture_progress = ExtResource("1_3b2b5")
+metadata/_edit_use_anchors_ = true
+
+[node name="PostureBar" type="TextureProgressBar" parent="Player2UI"]
+layout_mode = 0
+offset_left = -1678.0
+offset_top = 247.0
+offset_right = -863.0
+offset_bottom = 351.0
+scale = Vector2(0.5, 0.5)
+value = 100.0
+texture_progress = ExtResource("2_g6l6n")
+metadata/_edit_use_anchors_ = true
+
+[node name="Frame" type="TextureRect" parent="Player2UI"]
+layout_mode = 0
+offset_left = -1801.0
+offset_top = 158.0
+offset_right = -574.0
+offset_bottom = 524.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_b3bc3")
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player2UI"]
+position = Vector2(-1483.9999, 101)
+scale = Vector2(3.5, 3.5)
+sprite_frames = SubResource("SpriteFrames_27c8x")
+animation = &"Idle_1"
